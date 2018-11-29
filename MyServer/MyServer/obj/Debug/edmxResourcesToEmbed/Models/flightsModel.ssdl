@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="travelstartModel1.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="flights">
+    <Key>
+      <PropertyRef Name="flights_Id" />
+    </Key>
+    <Property Name="flights_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="flight_Name" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="from_Location" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="to_Location" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="departure_Date" Type="date" Nullable="false" />
+    <Property Name="arrival_Date" Type="date" Nullable="false" />
+    <Property Name="total_Seats" Type="int" Nullable="false" />
+    <Property Name="available_Seats" Type="int" Nullable="false" />
+    <Property Name="price" Type="decimal" Precision="18" Scale="0" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Users">
+    <Key>
+      <PropertyRef Name="UserId" />
+    </Key>
+    <Property Name="UserId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserName" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Email" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Password" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="FirstName" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="LastName" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityContainer Name="travelstartModel1StoreContainer">
+    <EntitySet Name="flights" EntityType="Self.flights" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Users" EntityType="Self.Users" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

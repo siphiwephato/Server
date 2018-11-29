@@ -1,0 +1,113 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="travelstartModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="booking">
+    <Key>
+      <PropertyRef Name="booking_id" />
+    </Key>
+    <Property Name="booking_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="from_location" Type="varchar" MaxLength="50" />
+    <Property Name="to_location" Type="varchar" MaxLength="50" />
+    <Property Name="numtravellers" Type="int" />
+    <Property Name="User_id" Type="int" />
+    <Property Name="flights_id" Type="int" />
+    <Property Name="payment_id" Type="int" />
+    <Property Name="price" Type="decimal" Precision="18" Scale="0" />
+    <Property Name="date" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Employe">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Fname" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Lname" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="email" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="flights">
+    <Key>
+      <PropertyRef Name="flights_Id" />
+    </Key>
+    <Property Name="flights_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="flight_Name" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="from_Location" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="to_Location" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="departure_Date" Type="date" Nullable="false" />
+    <Property Name="arrival_Date" Type="date" Nullable="false" />
+    <Property Name="total_Seats" Type="int" Nullable="false" />
+    <Property Name="available_Seats" Type="int" Nullable="false" />
+    <Property Name="price" Type="decimal" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="users_userdD" Type="int" />
+    <Property Name="total" Type="int" />
+  </EntityType>
+  <EntityType Name="payments">
+    <Key>
+      <PropertyRef Name="payment_id" />
+    </Key>
+    <Property Name="payment_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="users_user_id" Type="int" />
+    <Property Name="transaction_date" Type="varchar" MaxLength="50" />
+    <Property Name="amount" Type="decimal" Precision="18" Scale="0" />
+    <Property Name="flight_id" Type="int" />
+    <Property Name="from" Type="varchar" MaxLength="50" />
+    <Property Name="to" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'travelstart.dbo.tblEmployee' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="tblEmployee">
+    <Key>
+      <PropertyRef Name="EmployeeId" />
+      <PropertyRef Name="Name" />
+      <PropertyRef Name="City" />
+      <PropertyRef Name="Department" />
+      <PropertyRef Name="Gender" />
+    </Key>
+    <Property Name="EmployeeId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="City" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="Department" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="Gender" Type="varchar" MaxLength="6" Nullable="false" />
+  </EntityType>
+  <EntityType Name="traveller">
+    <Key>
+      <PropertyRef Name="traveller_id" />
+    </Key>
+    <Property Name="traveller_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FisrtName" Type="varchar" MaxLength="50" />
+    <Property Name="LastName" Type="varchar" MaxLength="50" />
+    <Property Name="typeOfMeal" Type="varchar" MaxLength="50" />
+    <Property Name="email" Type="varchar" MaxLength="50" />
+    <Property Name="countryCode" Type="varchar" MaxLength="50" />
+    <Property Name="number" Type="nchar" MaxLength="10" />
+    <Property Name="users_userId" Type="int" />
+  </EntityType>
+  <EntityType Name="Users">
+    <Key>
+      <PropertyRef Name="UserId" />
+    </Key>
+    <Property Name="UserId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserName" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Email" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Password" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="FirstName" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="LastName" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="card_no" Type="varchar" MaxLength="50" />
+    <Property Name="account_no" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityContainer Name="travelstartModelStoreContainer">
+    <EntitySet Name="booking" EntityType="Self.booking" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Employe" EntityType="Self.Employe" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="flights" EntityType="Self.flights" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="payments" EntityType="Self.payments" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="traveller" EntityType="Self.traveller" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Users" EntityType="Self.Users" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblEmployee" EntityType="Self.tblEmployee" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [tblEmployee].[EmployeeId] AS [EmployeeId], 
+    [tblEmployee].[Name] AS [Name], 
+    [tblEmployee].[City] AS [City], 
+    [tblEmployee].[Department] AS [Department], 
+    [tblEmployee].[Gender] AS [Gender]
+    FROM [dbo].[tblEmployee] AS [tblEmployee]</DefiningQuery>
+    </EntitySet>
+  </EntityContainer>
+</Schema>

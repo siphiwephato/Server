@@ -1,0 +1,99 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="travelstartModelStoreContainer" CdmEntityContainer="travelstartEntities">
+    <EntitySetMapping Name="Users">
+      <EntityTypeMapping TypeName="travelstartModel.User">
+        <MappingFragment StoreEntitySet="Users">
+          <ScalarProperty Name="account_no" ColumnName="account_no" />
+          <ScalarProperty Name="card_no" ColumnName="card_no" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="flights">
+      <EntityTypeMapping TypeName="travelstartModel.flight">
+        <MappingFragment StoreEntitySet="flights">
+          <ScalarProperty Name="total" ColumnName="total" />
+          <ScalarProperty Name="users_userdD" ColumnName="users_userdD" />
+          <ScalarProperty Name="price" ColumnName="price" />
+          <ScalarProperty Name="available_Seats" ColumnName="available_Seats" />
+          <ScalarProperty Name="total_Seats" ColumnName="total_Seats" />
+          <ScalarProperty Name="arrival_Date" ColumnName="arrival_Date" />
+          <ScalarProperty Name="departure_Date" ColumnName="departure_Date" />
+          <ScalarProperty Name="to_Location" ColumnName="to_Location" />
+          <ScalarProperty Name="from_Location" ColumnName="from_Location" />
+          <ScalarProperty Name="flight_Name" ColumnName="flight_Name" />
+          <ScalarProperty Name="flights_Id" ColumnName="flights_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblEmployees">
+      <EntityTypeMapping TypeName="travelstartModel.tblEmployee">
+        <MappingFragment StoreEntitySet="tblEmployee">
+          <ScalarProperty Name="Gender" ColumnName="Gender" />
+          <ScalarProperty Name="Department" ColumnName="Department" />
+          <ScalarProperty Name="City" ColumnName="City" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="EmployeeId" ColumnName="EmployeeId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Employes">
+      <EntityTypeMapping TypeName="travelstartModel.Employe">
+        <MappingFragment StoreEntitySet="Employe">
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="Lname" ColumnName="Lname" />
+          <ScalarProperty Name="Fname" ColumnName="Fname" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="travellers">
+      <EntityTypeMapping TypeName="travelstartModel.traveller">
+        <MappingFragment StoreEntitySet="traveller">
+          <ScalarProperty Name="users_userId" ColumnName="users_userId" />
+          <ScalarProperty Name="number" ColumnName="number" />
+          <ScalarProperty Name="countryCode" ColumnName="countryCode" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="typeOfMeal" ColumnName="typeOfMeal" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="FisrtName" ColumnName="FisrtName" />
+          <ScalarProperty Name="traveller_id" ColumnName="traveller_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="payments">
+      <EntityTypeMapping TypeName="travelstartModel.payment">
+        <MappingFragment StoreEntitySet="payments">
+          <ScalarProperty Name="to" ColumnName="to" />
+          <ScalarProperty Name="from" ColumnName="from" />
+          <ScalarProperty Name="flight_id" ColumnName="flight_id" />
+          <ScalarProperty Name="amount" ColumnName="amount" />
+          <ScalarProperty Name="transaction_date" ColumnName="transaction_date" />
+          <ScalarProperty Name="users_user_id" ColumnName="users_user_id" />
+          <ScalarProperty Name="payment_id" ColumnName="payment_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="bookings">
+      <EntityTypeMapping TypeName="travelstartModel.booking">
+        <MappingFragment StoreEntitySet="booking">
+          <ScalarProperty Name="date" ColumnName="date" />
+          <ScalarProperty Name="to_location" ColumnName="to_location" />
+          <ScalarProperty Name="from_location" ColumnName="from_location" />
+          <ScalarProperty Name="price" ColumnName="price" />
+          <ScalarProperty Name="payment_id" ColumnName="payment_id" />
+          <ScalarProperty Name="flights_id" ColumnName="flights_id" />
+          <ScalarProperty Name="User_id" ColumnName="User_id" />
+          <ScalarProperty Name="numtravellers" ColumnName="numtravellers" />
+          <ScalarProperty Name="booking_id" ColumnName="booking_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

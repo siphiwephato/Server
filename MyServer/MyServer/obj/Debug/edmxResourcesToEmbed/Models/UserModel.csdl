@@ -1,0 +1,103 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="travelstartModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="travelstartEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Users" EntityType="travelstartModel.User" />
+    <EntitySet Name="flights" EntityType="travelstartModel.flight" />
+    <EntitySet Name="tblEmployees" EntityType="travelstartModel.tblEmployee" />
+    <EntitySet Name="Employes" EntityType="travelstartModel.Employe" />
+    <EntitySet Name="travellers" EntityType="travelstartModel.traveller" />
+    <EntitySet Name="payments" EntityType="travelstartModel.payment" />
+    <EntitySet Name="bookings" EntityType="travelstartModel.booking" />
+  </EntityContainer>
+  <EntityType Name="User">
+    <Key>
+      <PropertyRef Name="UserId" />
+    </Key>
+    <Property Name="UserId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UserName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Email" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Password" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="FirstName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="LastName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="card_no" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="account_no" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="flight">
+    <Key>
+      <PropertyRef Name="flights_Id" />
+    </Key>
+    <Property Name="flights_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="flight_Name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="from_Location" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="to_Location" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="departure_Date" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="arrival_Date" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="total_Seats" Type="Int32" Nullable="false" />
+    <Property Name="available_Seats" Type="Int32" Nullable="false" />
+    <Property Name="price" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
+    <Property Name="users_userdD" Type="Int32" />
+    <Property Name="total" Type="Int32" />
+  </EntityType>
+  <EntityType Name="tblEmployee">
+    <Key>
+      <PropertyRef Name="EmployeeId" />
+      <PropertyRef Name="Name" />
+      <PropertyRef Name="City" />
+      <PropertyRef Name="Department" />
+      <PropertyRef Name="Gender" />
+    </Key>
+    <Property Name="EmployeeId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="City" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="Department" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="Gender" Type="String" Nullable="false" MaxLength="6" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="Employe">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Fname" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Lname" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="email" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="traveller">
+    <Key>
+      <PropertyRef Name="traveller_id" />
+    </Key>
+    <Property Name="traveller_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="FisrtName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="LastName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="typeOfMeal" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="countryCode" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="number" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="users_userId" Type="Int32" />
+  </EntityType>
+  <EntityType Name="payment">
+    <Key>
+      <PropertyRef Name="payment_id" />
+    </Key>
+    <Property Name="payment_id" Type="Int32" Nullable="false" />
+    <Property Name="users_user_id" Type="Int32" />
+    <Property Name="transaction_date" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="amount" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="flight_id" Type="Int32" />
+    <Property Name="from" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="to" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="booking">
+    <Key>
+      <PropertyRef Name="booking_id" />
+    </Key>
+    <Property Name="booking_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="numtravellers" Type="Int32" />
+    <Property Name="User_id" Type="Int32" />
+    <Property Name="flights_id" Type="Int32" />
+    <Property Name="payment_id" Type="Int32" />
+    <Property Name="price" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="from_location" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="to_location" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="date" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+</Schema>

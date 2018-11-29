@@ -1,0 +1,63 @@
+﻿@model IEnumerable<MyServer.Models.booking>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.C_from_location)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.C_to_location)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.numtravellers)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.User_id)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.flights_id)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.payment_id)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.C_from_location)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.C_to_location)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.numtravellers)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.User_id)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.flights_id)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.payment_id)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.booking_id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.booking_id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.booking_id })
+        </td>
+    </tr>
+}
+
+</table>

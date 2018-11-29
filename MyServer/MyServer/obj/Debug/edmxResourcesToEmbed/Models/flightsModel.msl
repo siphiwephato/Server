@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="travelstartModel1StoreContainer" CdmEntityContainer="travelstartEntities2">
+    <EntitySetMapping Name="flights">
+      <EntityTypeMapping TypeName="travelstartModel1.flight">
+        <MappingFragment StoreEntitySet="flights">
+          <ScalarProperty Name="flights_Id" ColumnName="flights_Id" />
+          <ScalarProperty Name="flight_Name" ColumnName="flight_Name" />
+          <ScalarProperty Name="from_Location" ColumnName="from_Location" />
+          <ScalarProperty Name="to_Location" ColumnName="to_Location" />
+          <ScalarProperty Name="departure_Date" ColumnName="departure_Date" />
+          <ScalarProperty Name="arrival_Date" ColumnName="arrival_Date" />
+          <ScalarProperty Name="total_Seats" ColumnName="total_Seats" />
+          <ScalarProperty Name="available_Seats" ColumnName="available_Seats" />
+          <ScalarProperty Name="price" ColumnName="price" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Users">
+      <EntityTypeMapping TypeName="travelstartModel1.User">
+        <MappingFragment StoreEntitySet="Users">
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
